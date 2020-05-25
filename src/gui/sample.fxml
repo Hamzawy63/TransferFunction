@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#checkEntries" prefHeight="554.0" prefWidth="812.0" style="-fx-background-color: #F4FFFB;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controller">
+   <children>
+      <Separator layoutX="296.0" layoutY="15.0" orientation="VERTICAL" prefHeight="524.0" prefWidth="26.0" style="-fx-border-color: 20;" />
+      <Label layoutX="14.0" layoutY="25.0" text="Enter Number of Nodes " />
+      <Label layoutX="14.0" layoutY="63.0" text="Source Node" />
+      <Label layoutX="14.0" layoutY="107.0" text="Sink Node" />
+      <Button fx:id="solveBtn" layoutX="105.0" layoutY="439.0" mnemonicParsing="false" onAction="#solveBtnAction" prefHeight="39.0" prefWidth="96.0" style="-fx-font-size: 13;" text="Solve" />
+      <TextField fx:id="numberOfNodes" layoutX="193.0" layoutY="21.0" prefHeight="25.0" prefWidth="89.0" />
+      <TextField fx:id="sourceNode" layoutX="193.0" layoutY="59.0" prefHeight="25.0" prefWidth="89.0" />
+      <TextField fx:id="sinkNode" layoutX="193.0" layoutY="103.0" prefHeight="25.0" prefWidth="89.0" />
+      <Label fx:id="answerLabel" alignment="CENTER" layoutX="16.0" layoutY="496.0" prefHeight="46.0" prefWidth="55.0" text="Answer : " textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <ListView fx:id="answerTextArea" layoutX="83.0" layoutY="494.0" prefHeight="46.0" prefWidth="149.0" />
+      <Button fx:id="addEdgeBtn" layoutX="227.0" layoutY="167.0" mnemonicParsing="false" onAction="#addNewEdge" prefHeight="25.0" prefWidth="55.0" text="Add" />
+      <TextField fx:id="addEdgeTextField" layoutX="14.0" layoutY="167.0" prefHeight="25.0" prefWidth="178.0" promptText="V1     V2      Weight" />
+      <Label layoutX="15.0" layoutY="150.0" prefHeight="17.0" prefWidth="129.0" text="Add new edge" />
+      <ListView fx:id="listView" layoutX="16.0" layoutY="216.0" prefHeight="200.0" prefWidth="268.0" />
+   </children>
+</Pane>
