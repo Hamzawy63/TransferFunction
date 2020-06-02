@@ -31,7 +31,10 @@ public class Controller {
 
     private boolean fillGraphInformation(String s1, String s2, String s3) {
         if (graphAdapter == null) {
-            graphAdapter = new GraphAdapter(Integer.valueOf(numberOfNodes.getText()));
+            int no = Integer.valueOf(numberOfNodes.getText());
+            int source = Integer.valueOf(sourceNode.getText());
+            int sink = Integer.valueOf(sinkNode.getText());
+            graphAdapter = new GraphAdapter(no, source, sink);
         }
         try {
             Integer v1 = Integer.valueOf(s1);
@@ -86,9 +89,9 @@ public class Controller {
         }
         try {
             int no = Integer.valueOf(numberOfNodes.getText());
-            int souce = Integer.valueOf(sourceNode.getText());
+            int source = Integer.valueOf(sourceNode.getText());
             int sink = Integer.valueOf(sinkNode.getText());
-            if (souce <= no && sink <= no) {
+            if (source <= no && sink <= no && source != sink) {
                 addEdgeTextField.setDisable(false);
                 listView.setDisable(false);
                 solveBtn.setDisable(false);

@@ -8,7 +8,7 @@ import org.junit.Test;
 public class UnitTests {
     @Test
     public void test1() {
-        GraphAdapter graphAdapter = new GraphAdapter(6);
+        GraphAdapter graphAdapter = new GraphAdapter(6,1,6);
         graphAdapter.addEdge(1, 2, 1);
         graphAdapter.addEdge(2, 5, 3);
         graphAdapter.addEdge(2, 3, 5);
@@ -22,13 +22,13 @@ public class UnitTests {
         double delta = 1 - ((-35.0) + (-21505.0) + (-51.0) + (-299.0)) + (10465.0);
         double m1 = 24035;
         double m2 = 57;
-        System.out.println((m1 + m2) /delta);
+        //System.out.println((m1 + m2) /delta);
         Assert.assertEquals((m1 + m2) /delta,masonMetaInformation.getTransferFunction(), 0.00000000001f);
 
     }
     @Test
     public void test2() {
-        GraphAdapter graphAdapter = new GraphAdapter(7);
+        GraphAdapter graphAdapter = new GraphAdapter(7,1,7);
         graphAdapter.addEdge(1, 2, 1);
         graphAdapter.addEdge(2, 3, 5);
         graphAdapter.addEdge(2, 6, 10);

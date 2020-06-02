@@ -13,8 +13,13 @@ public class GraphAdapter {
     DefaultDirectedWeightedGraph<Integer, DefaultWeightedEdge> g;
     List<Path> paths;
     List<Cycle> cycles;
+    int source  ;
+    int target ;
 
-    public GraphAdapter(int v) {
+    public GraphAdapter(int v , int source , int target) {
+        this.source = source ;
+        this.target = target ;
+        /**source and target should be less than or equal the v*/
         this.v = v;
         g = new DefaultDirectedWeightedGraph<>(DefaultWeightedEdge.class);
         for (int i = 1; i <= v; i++) g.addVertex(i);
@@ -31,7 +36,7 @@ public class GraphAdapter {
             return;
         }
         AllDirectedPaths<Integer, DefaultWeightedEdge> allDirectedPaths = new AllDirectedPaths<>(g);
-        List<GraphPath<Integer, DefaultWeightedEdge>> paths = allDirectedPaths.getAllPaths(1, v, true, v);
+        List<GraphPath<Integer, DefaultWeightedEdge>> paths = allDirectedPaths.getAllPaths(source, target, true, v);
       //  System.out.println(paths);
         List<Path> result = new ArrayList<>();
         outer:
@@ -125,7 +130,7 @@ public class GraphAdapter {
 
 
     public static void main(String[] args) {
-        GraphAdapter graphAdapter = new GraphAdapter(6);
+        GraphAdapter graphAdapter = new GraphAdapter(6,1,6);
         graphAdapter.addEdge(1, 2, 1);
         graphAdapter.addEdge(2, 5, 3);
         graphAdapter.addEdge(2, 3, 5);
