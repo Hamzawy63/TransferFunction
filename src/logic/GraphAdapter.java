@@ -130,16 +130,18 @@ public class GraphAdapter {
 
 
     public static void main(String[] args) {
-        GraphAdapter graphAdapter = new GraphAdapter(6,1,6);
+        GraphAdapter graphAdapter = new GraphAdapter(7,1,7);
         graphAdapter.addEdge(1, 2, 1);
-        graphAdapter.addEdge(2, 5, 3);
         graphAdapter.addEdge(2, 3, 5);
-        graphAdapter.addEdge(3, 2, -7);
-        graphAdapter.addEdge(3, 4, 11);
-        graphAdapter.addEdge(4, 5, 23);
-        graphAdapter.addEdge(5, 4, -13);
-        graphAdapter.addEdge(5, 2, -17);
-        graphAdapter.addEdge(5, 6, 19);
+        graphAdapter.addEdge(2, 6, 10);
+        graphAdapter.addEdge(3, 4, 10);
+        graphAdapter.addEdge(4, 5, 2);
+        graphAdapter.addEdge(4, 3, -1);
+        graphAdapter.addEdge(5, 4, -2);
+        graphAdapter.addEdge(5, 7, 1);
+        graphAdapter.addEdge(5, 2, -1);
+        graphAdapter.addEdge(6, 5, 2);
+        graphAdapter.addEdge(6, 6, -1);
         graphAdapter.fillTheCycles();
         graphAdapter.fillThePaths();
         System.out.println(graphAdapter.paths);
